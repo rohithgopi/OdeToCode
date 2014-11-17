@@ -12,12 +12,15 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
+                <img src="~/Images/Seafood-Fish-128.png" style="float:right" height="64" width="64" />
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
+                        
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("O D E  - T O -  F O O D", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                
+                
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -27,6 +30,14 @@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+        </div>
+    </div>
+    <div style="width:100%;">
+        <div class="navDecorationx">
+            <div class="navDecorationColor1"></div>
+            <div class="navDecorationColor2"></div>
+            <div class="navDecorationColor3"></div>
+            <div class="navDecorationColor4"></div>
         </div>
     </div>
     <div class="container body-content">
