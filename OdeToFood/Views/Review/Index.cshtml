@@ -1,0 +1,95 @@
+﻿@model IEnumerable<OdeToFood.Models.ReviewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<input id="AutoComp" />
+<button id="X">Text</button>
+<input id="Date"/>
+<div id="grid"></div>
+<script>
+    $(document).ready(function () {
+        $("#grid").kendoGrid({
+            dataSource: {
+                transport: {
+                    read: "/Review/GetData",
+                    type: "json"
+                },
+                pageSize: 20
+            },
+            groupable: true,
+            sortable: true,
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 5
+            },
+            columns: [{
+                field: "RestaurantName",
+                title: "Name Of The Restaurant",
+                width: 200
+            }, {
+                field: "Comment",
+                title: "Comment"
+            }, {
+                field: "Rating",
+                title: "Rating Of The Restaurant"
+            }]
+        });
+        $("#Date").kendoDatePicker();
+        $("#X").kendoButton();
+        $("#AutoComp").kendoAutoComplete({
+            dataTextField: "RestaurantName",
+            filter: "startswith",
+            minLength: 3,
+            dataSource: {
+
+                transport: {
+                    read: "/Review/GetData",
+                    type: "json"
+                }
+            }
+        });
+
+    });
+</script>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RestaurantName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RestaurantName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>*@

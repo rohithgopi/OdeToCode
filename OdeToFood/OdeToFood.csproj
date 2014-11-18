@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET MVC Q2 2014\wrappers\aspnetmvc\Binaries\Mvc5\Kendo.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -161,18 +164,51 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CuisineController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AboutModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ReviewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Kendo\Bootstrap\editor.png" />
+    <Content Include="Content\Kendo\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\Kendo\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\Kendo\Bootstrap\loading-image.gif" />
+    <Content Include="Content\Kendo\Bootstrap\loading.gif" />
+    <Content Include="Content\Kendo\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\Kendo\Bootstrap\markers.png" />
+    <Content Include="Content\Kendo\Bootstrap\markers_2x.png" />
+    <Content Include="Content\Kendo\Bootstrap\slider-h.gif" />
+    <Content Include="Content\Kendo\Bootstrap\slider-v.gif" />
+    <Content Include="Content\Kendo\Bootstrap\sprite.png" />
+    <Content Include="Content\Kendo\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\Kendo\Default\editor.png" />
+    <Content Include="Content\Kendo\Default\imagebrowser.png" />
+    <Content Include="Content\Kendo\Default\indeterminate.gif" />
+    <Content Include="Content\Kendo\Default\loading-image.gif" />
+    <Content Include="Content\Kendo\Default\loading.gif" />
+    <Content Include="Content\Kendo\Default\loading_2x.gif" />
+    <Content Include="Content\Kendo\Default\markers.png" />
+    <Content Include="Content\Kendo\Default\markers_2x.png" />
+    <Content Include="Content\Kendo\Default\slider-h.gif" />
+    <Content Include="Content\Kendo\Default\slider-v.gif" />
+    <Content Include="Content\Kendo\Default\sprite.png" />
+    <Content Include="Content\Kendo\Default\sprite_2x.png" />
+    <Content Include="Content\Kendo\kendo.bootstrap.min.css" />
+    <Content Include="Content\Kendo\kendo.common-bootstrap.min.css" />
+    <Content Include="Content\Kendo\kendo.common.core.min.css" />
+    <Content Include="Content\Kendo\kendo.common.min.css" />
+    <Content Include="Content\Kendo\kendo.dataviz.default.min.css" />
+    <Content Include="Content\Kendo\kendo.dataviz.min.css" />
+    <Content Include="Content\Kendo\kendo.default.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -188,6 +224,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Kendo\kendo.all.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -222,6 +259,7 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Review\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

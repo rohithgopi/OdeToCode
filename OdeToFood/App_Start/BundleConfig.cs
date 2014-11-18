@@ -26,6 +26,14 @@ namespace OdeToFood
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/Kendo").Include(
+                "~/Scripts/Kendo/kendo.all.min.js"
+                ));
+            bundles.Add(new StyleBundle("~/Content/Kendo/css").Include(
+                "~/Content/Kendo/kendo.common.min.css",
+                "~/Content/Kendo/kendo.default.min.css"
+                ));
+            bundles.IgnoreList.Clear();
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
