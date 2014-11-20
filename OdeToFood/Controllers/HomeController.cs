@@ -25,6 +25,7 @@ namespace OdeToFood.Controllers
         [HttpPost]
         public ActionResult Create(Restaurant restaurant)
         {
+            
             if (Request.Files["files"] != null)
             {
                 byte[] Image;
@@ -32,6 +33,7 @@ namespace OdeToFood.Controllers
                 {
                     Image = binaryReader.ReadBytes(Request.Files["files"].ContentLength);
                 }
+                restaurant.Photo = Image;
             }
             
             _db.Restaurants.Add(restaurant);
