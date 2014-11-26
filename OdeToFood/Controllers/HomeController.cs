@@ -11,9 +11,16 @@ namespace OdeToFood.Controllers
     public class HomeController : Controller
     {
         OdeToFoodDb _db = new OdeToFoodDb();
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm=null)
         {
-            var model = _db.Restaurants;
+            var model = _db.Restaurants
+                .Where(x => searchTerm == null || x.Name.StartsWith(searchTerm))
+                .OrderByDescending(x => x.Reviews.Count)
+                .Select(x => new RestaurantListView { Id = x.Id,
+                Name = x.Name,
+                City =x.City,
+                Country = x.Country,
+                ReviewCount = x.Reviews.Count});
             return View(model);
         }
 
@@ -26,17 +33,17 @@ namespace OdeToFood.Controllers
         public ActionResult Create(Restaurant restaurant)
         {
             
-            if (Request.Files["files"] != null)
-            {
-                byte[] Image;
-                using (var binaryReader = new BinaryReader(Request.Files["files"].InputStream))
-                {
-                    Image = binaryReader.ReadBytes(Request.Files["files"].ContentLength);
-                }
-                restaurant.Photo = Image;
-            }
+            //if (Request.Files["files"] != null)
+            //{
+            //    byte[] Image;
+            //    using (var binaryReader = new BinaryReader(Request.Files["files"].InputStream))
+            //    {
+            //        Image = binaryReader.ReadBytes(Request.Files["files"].ContentLength);
+            //    }
+            //    restaurant.Photo = Image;
+            //}
             
-            _db.Restaurants.Add(restaurant);
+            //_db.Restaurants.Add(restaurant);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }

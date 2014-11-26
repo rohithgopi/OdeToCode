@@ -1,34 +1,21 @@
-﻿@model  IEnumerable<OdeToFood.Models.Restaurant>
+﻿@model  IEnumerable<OdeToFood.Models.RestaurantListView>
 @{
     ViewBag.Title = "Home Page";
 }
-@Html.ActionLink("Add New Restaurant","Create")
+@Html.ActionLink("Add New Restaurant", "Create")
 <h2>List Of Restaurants</h2>
 <hr />
-<div class="container-fluid">
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            if (@item.Photo != null)
-            {
-                string imageBase64 = Convert.ToBase64String(@item.Photo);
-                string imageSrc = string.Format("data:image/png;base64,{0}", imageBase64);
-                <div class="col-md-3 child" style="background-color:#01C8CD;border:2px solid white;background-image:url(@imageSrc);border-radius:3px;">
-
-                    <div style="">
-                        <div style="color:white;">
-                            <h3 style="margin-top:2px;">@item.Name</h3>
-                            <div style="text-align:right;">
-                                <h4>@item.City, @item.Country</h4>
-                                <div>@item.Description</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-        }
-        
+<form method="get">
+    Search : <input type="text" name="searchTerm" /> <input type="submit" value="Go" />
+</form>
+@foreach (var item in Model)
+{
+    <h3>@item.Name</h3>
+    <div>
+        <h4>@item.City, @item.Country</h4>
     </div>
-</div>
-<script>
-</script>
+    <div>
+        @item.ReviewCount Reviews So Far.
+    </div>
+    <hr />
+}

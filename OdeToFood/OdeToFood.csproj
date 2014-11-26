@@ -161,6 +161,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CuisineController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RestaurantController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,6 +176,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\OdeToFoodDb.cs" />
     <Compile Include="Models\Restaurant.cs" />
+    <Compile Include="Models\RestaurantListView.cs" />
     <Compile Include="Models\RestaurantReview.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -264,6 +266,14 @@
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Restaurant\Create.cshtml" />
+    <Content Include="Views\Restaurant\Delete.cshtml" />
+    <Content Include="Views\Restaurant\Edit.cshtml" />
+    <Content Include="Views\Restaurant\Index.cshtml" />
+    <Content Include="Views\Review\Index.cshtml" />
+    <Content Include="Views\Review\Reviews.cshtml" />
+    <Content Include="Views\Review\Create.cshtml" />
+    <Content Include="Views\Review\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

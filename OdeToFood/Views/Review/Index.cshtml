@@ -1,0 +1,16 @@
+﻿@model OdeToFood.Models.Restaurant
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Model.Name</h2>
+@Html.Partial("Reviews",Model.Reviews)
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { restaurantId = Model.Id})
+</p>
+
+
